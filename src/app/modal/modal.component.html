@@ -1,0 +1,28 @@
+<div id="myModal" class="modal" #gal>
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="showOrCloseGallery(false)">&times;</span>
+      <p>Gallery</p>
+    </div>
+    <div class="modal-body">
+      <ng-container *ngFor="let item of slides">
+        <img class="img-item" [src]="item.url" (click)="showOrCloseFullImage(item)"/>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<div id="full-image-popoup" class="modal" style="z-index: 2;"  #fullImg>
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="showOrCloseFullImage(null)">&times;</span>
+      <p>{{currentImg?.title}}</p>
+    </div>
+    <div class="modal-body">
+        <img class="full-item" [src]="currentImg?.url"/>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>

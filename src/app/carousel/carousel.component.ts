@@ -53,15 +53,9 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.preloadImages(); // for the demo
     this.nextDisabled = this.slides.length < 2;
   }
 
-  preloadImages() {
-    for (const slide of this.slides) {
-      new Image().src = slide.url;
-    }
-  }
   openModalGallery() {
     this.openGallery.emit('myModal');
   }
